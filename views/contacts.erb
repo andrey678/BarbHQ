@@ -1,0 +1,33 @@
+<h1>Контактная информация</h1>
+<div class="bd-example">
+  <address>
+    <strong>Barber Shop</strong><br>
+    Парикмахерская улица,д.1<br>
+    г.Парикмахеровск, 123456<br>
+    <abbr title="Телефон">Позвоните:</abbr> +71234567890
+  </address>
+
+  <address>
+    <strong>Walter White<br/>
+Jessie Pinkman<br/>
+Gus Fring<br/></strong><br>
+    <a href="mailto:first.last@example.com">crazybarbershop@example.com</a>
+  </address>
+</div>
+
+
+<form action="/contacts" method="POST">
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input name="contact[clientemail]" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+
+  </div>
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Оставьте своё сообщение</label>
+    <textarea name = "contact[clientmessage]"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+<button type="Submit" class="btn btn-outline-primary">Отправить</button>
+
+</form>

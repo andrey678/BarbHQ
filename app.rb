@@ -15,7 +15,10 @@ end
 class Barber < ActiveRecord::Base
 end
 
-
+class Contact < ActiveRecord::Base
+	validates :clientemail, presence: true
+	validates :clientmessage, presence: true
+end
 before do
 @barbers = Barber.all
 end
@@ -58,3 +61,20 @@ get '/client/:id' do
 	@client = Client.find (params[:id])
 	erb :client
 end	
+
+get '/contacts' do
+	@d = Contact.new
+		erb :contacts
+end
+post '/contacts' do
+	@d = Contact.new params[:contact]
+
+	if @d.save
+	
+	erb "<h2>Спасибо за обращение.С вами свяжутся в ближайшее время!</h2>"
+	
+	else
+		@error = @d.errors.full_messages.first
+		erb :contacts
+end
+end
